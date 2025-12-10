@@ -1,0 +1,47 @@
+:root {
+  --primary-color: #640e0e;
+  --neutral-color: #ffefd2;
+}
+
+nav {
+  display: flex;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 1.25rem 2rem;
+  background-color: var(--primary-color);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  img {
+    width: 5rem;
+    height: auto;
+  }
+
+  a img {
+    width: 1.5rem;
+    cursor: pointer;
+  }
+  div {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+
+    a {
+      text-decoration: none;
+      color: var(--neutral-color);
+      font-size: 1.3rem;
+      transition: all 0.25s ease;
+    }
+  }
+}
+
+nav a:hover {
+  font-weight: 800;
+}
+
+nav a.active {
+  font-weight: 800;
+}

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>bentobunni - checkout</title>
+    <link rel="stylesheet" href="/style/checkout.css" />
+    <link rel="stylesheet" href="/style/responsive.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bona+Nova:ital,wght@0,400;0,700;1,400&family=Farro:wght@300;400;500;700&family=League+Spartan:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <a href="#" class="back-button" onclick="history.back(); return false;"
+      >← back</a
+    >
+
+    <div id="checkout-title">
+      <h1>checkout</h1>
+      <p>complete your order by providing payment details</p>
+    </div>
+
+    <section>
+      <div id="checkoutitems">
+        <div id="list-container">
+          <div class="item-row">
+            <p class="item-name">LOADING...</p>
+            <p class="item-price">₱0</p>
+          </div>
+
+          <div class="item-row">
+            <p class="item-name">LOADING...</p>
+            <p class="item-price">₱0</p>
+          </div>
+        </div>
+
+        <div id="total">
+          <p>total</p>
+          <h1 id="total-amount">₱0</h1>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div id="checkoutchoice">
+        <label class="square-radio">
+          <input
+            type="radio"
+            name="choice"
+            id="delivery-radio"
+            data-order-type="delivery"
+          />
+          <span class="custom-box"></span>
+          <h1 style="font-size: 150%">delivery</h1>
+        </label>
+
+        <label class="square-radio">
+          <input
+            type="radio"
+            name="choice"
+            id="pickup-radio"
+            data-order-type="pickup"
+          />
+          <span class="custom-box"></span>
+          <h1 style="font-size: 150%">pick-up</h1>
+        </label>
+      </div>
+    </section>
+
+    <section id="delivery-section" style="display: none">
+      <section class="order-form">
+        <form>
+          <div id="s1">
+            <h1 id="delivery" class="checkout-gradient">
+              <span class="strong">delivery</span>
+              <span class="mid">delivery</span>
+              <span class="low">delivery</span>
+              <span class="disclaim"> for Metro Manila only </span>
+            </h1>
+          </div>
+          <label for="delivery-fullname">full name *</label>
+          <input
+            type="text"
+            id="delivery-fullname"
+            placeholder="Juan Dela Cruz"
+            required
+          />
+
+          <label for="delivery-phone">phone number *</label>
+          <input
+            type="tel"
+            id="delivery-phone"
+            placeholder="09XX XXX XXXX"
+            required
+          />
+
+          <label for="delivery-facebook">facebook link *</label>
+          <input
+            type="url"
+            id="delivery-facebook"
+            placeholder="https://www.facebook.com/juan.delacruz/"
+            required
+          />
+
+          <label for="delivery-address">delivery address *</label>
+          <input
+            type="text"
+            id="delivery-address"
+            placeholder="123 street, barangay, city"
+            required
+          />
+
+          <label for="delivery-notes">delivery notes (optional)</label>
+          <input
+            type="text"
+            id="delivery-notes"
+            placeholder="landmarks, gate codes, etc."
+          />
+
+          <label for="delivery-order-notes">order notes (optional)</label>
+          <input
+            type="text"
+            id="delivery-order-notes"
+            placeholder="special requests, preferred delivery time, etc."
+          />
+          <h1
+            id="delivery-payment"
+            class="checkout-gradient payment-header-spacing"
+          >
+            <span class="strong">payment</span>
+            <span class="mid">payment</span>
+            <span class="low">payment</span>
+            <span class="disclaim" style="right: 0px"> Gcash only </span>
+          </h1>
+
+          <div id="qr">
+            <img src="./img/qr.png" alt="QR code" />
+            <p id="scan">scan qr code or send to:</p>
+            <h1>+63 927 461 2011</h1>
+            <p id="bentob">Bento B.</p>
+          </div>
+
+          <label for="delivery-reference">gcash reference number *</label>
+          <input
+            type="text"
+            id="delivery-reference"
+            placeholder="20211109112345"
+            required
+          />
+
+          <label for="delivery-proof" class="upload-label-title"
+            >Upload proof of payment *</label
+          >
+          <label for="delivery-proof" class="upload-label" id="upload-label">
+            <span>click to upload screenshot<br />jpg, png (max 5mb)</span>
+            <input
+              type="file"
+              id="delivery-proof"
+              accept="image/jpeg,image/jpg,image/png"
+              required
+            />
+          </label>
+
+          <button class="submit-btn" id="submit" type="submit">submit</button>
+        </form>
+      </section>
+    </section>
+
+    <section id="pickup" style="display: none">
+      <section class="order-form">
+        <form>
+          <div id="s1">
+            <h1 id="pickup" class="checkout-gradient">
+              <span class="strong">pick-up</span>
+              <span class="mid">pick-up</span>
+              <span class="low">pick-up</span>
+              <span class="disclaim"> near Quezon City or U-Belt only </span>
+            </h1>
+          </div>
+
+          <label for="pickup-fullname">full name *</label>
+          <input
+            type="text"
+            id="pickup-fullname"
+            placeholder="Juan Dela Cruz"
+            required
+          />
+
+          <label for="pickup-phone">phone number *</label>
+          <input
+            type="tel"
+            id="pickup-phone"
+            placeholder="09XX XXX XXXX"
+            required
+          />
+
+          <label for="pickup-facebook">facebook link *</label>
+          <input
+            type="url"
+            id="pickup-facebook"
+            placeholder="https://www.facebook.com/juan.delacruz/"
+            required
+          />
+
+          <label for="pickup-order-notes">order notes (optional)</label>
+          <input
+            type="text"
+            id="pickup-order-notes"
+            placeholder="special requests, preferred delivery time, etc."
+          />
+          <h1
+            id="delivery-payment"
+            class="checkout-gradient payment-header-spacing"
+          >
+            <span class="strong">payment</span>
+            <span class="mid">payment</span>
+            <span class="low">payment</span>
+            <span class="disclaim" style="right: 0px"> Gcash or cash </span>
+          </h1>
+
+          <div id="qr">
+            <img src="./img/qr.png" alt="QR code" />
+            <p id="scan">scan qr code or send to:</p>
+            <h1>+63 927 461 2011</h1>
+            <p id="bentob">Bento B.</p>
+          </div>
+
+          <label for="pickup-reference"
+            >gcash reference number (if gcash payment)</label
+          >
+          <input
+            type="text"
+            id="pickup-reference"
+            placeholder="20211109112345"
+          />
+
+          <label for="pickup-proof" class="upload-label-title"
+            >Upload proof of payment (if gcash payment)</label
+          >
+          <label for="pickup-proof" class="upload-label">
+            <span>click to upload screenshot<br />jpg, png (max 5mb)</span>
+            <input
+              type="file"
+              id="pickup-proof"
+              accept="image/*,.pdf"
+              id="upload-label"
+            />
+          </label>
+          <button class="submit-btn" id="submit" type="submit">submit</button>
+        </form>
+      </section>
+    </section>
+
+    <section
+      style="height: 15rem; background-color: var(--neutral-color)"
+    ></section>
+
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <img src="./img/logo.png" alt="Bento Bunni Logo" />
+          <p>life's sweetest moments come in the cutest packages!</p>
+        </div>
+
+        <div class="footer-links">
+          <h3>Navigation</h3>
+          <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./menu.html">Menu</a></li>
+            <li><a href="./feed.html">Feed</a></li>
+            <li><a href="./about.html">About</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <h3>Contact</h3>
+          <p>Email: info@bentobunni.com</p>
+          <p>Phone: +63 912 345 6789</p>
+        </div>
+
+        <div class="footer-social">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/profile.php?id=61577699221929"
+              ><img src="./img/facebook.png" alt="Facebook"
+            /></a>
+            <a href="https://www.instagram.com/bentobunniph/"
+              ><img src="./img/instagram.png" alt="Instagram"
+            /></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 Bento Bunni. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!--modal-->
+    <div id="confirmation-modal" class="modal">
+      <div class="modal-content order-confirmation">
+        <div class="checkmark">✔</div>
+
+        <h2>order placed!</h2>
+        <p class="thanks-text">
+          thank you for your order! we've received your payment details and will
+          confirm your order shortly.
+        </p>
+
+        <div class="order-number">order <strong>#ORD-02378509</strong></div>
+
+        <div class="confirmation-email">
+          <p>📧 <strong>confirmation email sent to:</strong></p>
+
+          <p id="user-email-display">fetching email...</p>
+
+          <p style="line-height: 1">
+            you will receive an email with your order details and confirmation
+            status within 24 hours.
+          </p>
+        </div>
+
+        <p class="notes">
+          we'll reach out via email or facebook to confirm your order and
+          coordinate delivery/pick-up. please keep your
+          <strong>gcash reference number</strong> and
+          <strong>order code</strong> handy!
+        </p>
+        <a href="index.html">
+          <button id="close-modal" class="back-home-btn">
+            <strong>back to home</strong>
+          </button>
+        </a>
+      </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <script src="/script/checkout.js"></script>
+  </body>
+</html>

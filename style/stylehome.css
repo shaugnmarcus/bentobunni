@@ -1,0 +1,695 @@
+:root {
+  --primary-color: #640e0e;
+  --neutral-color: #ffefd2;
+  --neutral-color-dim: #f7d4af;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "League Spartan", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+h2 {
+  color: var(--primary-color);
+  font-family: "Farro";
+}
+
+h1 {
+  color: var(--primary-color);
+}
+
+p {
+  color: var(--primary-color);
+  font-family: "Farro";
+}
+
+body {
+  background-color: var(--neutral-color);
+}
+
+nav a {
+  color: var(--neutral-color);
+}
+
+nav {
+  display: flex;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 1.25rem 2rem;
+  background-color: var(--primary-color);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  img {
+    width: rem;
+    height: auto;
+  }
+
+  a img {
+    width: 1.5rem;
+    cursor: pointer;
+  }
+  div {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+
+    a {
+      text-decoration: none;
+      font-size: 1.3rem;
+    }
+  }
+}
+
+.nav-icon {
+  transition: all 0.25s ease;
+}
+
+.nav-icon:hover {
+  transform: scale(1.2);
+}
+
+.burger {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--neutral-color);
+  transition: all 0.24s ease;
+}
+
+.burger:hover {
+  transform: scale(1.2);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.slide-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  animation: slideLeftAnim 1s ease forwards;
+  animation-delay: 0.3s;
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes dropdownFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes dropdownFadeOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes slideLeftAnim {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#dropdown {
+  position: relative;
+}
+
+#profile {
+  cursor: pointer;
+}
+
+#dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  margin-top: 0.5rem;
+  background-color: var(--neutral-color);
+  min-width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 1rem;
+  z-index: 1;
+  opacity: 0;
+}
+
+.cart-icon-container {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+
+  background-color: var(--neutral-color);
+  color: var(--primary-color);
+  font-family: "League Spartan", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 800;
+
+  min-width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+
+  border: 2px solid var(--primary-color);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+#dropdown-content.show {
+  display: block;
+  animation: dropdownFadeIn 0.3s ease-out forwards;
+}
+
+#dropdown-content.hide {
+  display: block;
+  animation: dropdownFadeOut 0.3s ease-out forwards;
+}
+
+#dropdown-content p {
+  color: var(--primary-color);
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+#dropdown-content button {
+  width: 100%;
+  padding: 0.5rem;
+  background-color: var(--primary-color);
+  color: var(--neutral-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: opacity 0.3s;
+}
+
+#dropdown-content button:hover {
+  opacity: 0.8;
+}
+
+.add-to-cart {
+  background-color: var(--primary-color);
+  color: var(--neutral-color);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+nav a {
+  text-decoration: none;
+  font-size: 1.3rem;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+nav a:hover {
+  font-weight: 800;
+}
+
+nav a.active {
+  font-weight: 800;
+}
+
+nav a img {
+  width: 1.5rem;
+  cursor: pointer;
+}
+
+.segment {
+  display: flex;
+  width: 100%;
+  height: 45rem;
+  filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
+  background-color: var(--primary-color);
+}
+
+.segment .left {
+  flex: 1;
+  padding: 10% 0% 5% 12%;
+}
+
+.segment .right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  overflow: hidden;
+  position: relative;
+}
+
+.segment .right img {
+  width: 45rem;
+  height: auto;
+  object-fit: contain;
+}
+
+.button-group {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.btn-primary-solid {
+  background-color: var(--neutral-color);
+  color: var(--primary-color);
+  padding: 12px 24px;
+  border-radius: 999px;
+  border-width: 0px;
+  font-weight: 800;
+  font-size: 1.5rem;
+  cursor: pointer;
+  width: 25%;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+  background-color: transparent;
+  color: var(--neutral-color);
+  border: 2px solid var(--neutral-color);
+  padding: 12px 24px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 1.5rem;
+  cursor: pointer;
+  width: 25%;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--neutral-color);
+  color: var(--primary-color);
+}
+
+.btn-primary-solid:hover {
+  background-color: var(--neutral-color-dim);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  padding: 12px 24px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  width: 50%;
+}
+
+.btn-secondary:hover {
+  background-color: var(--primary-color);
+  color: var(--neutral-color);
+}
+
+#section1 img {
+  height: auto;
+  border-radius: 32px;
+  width: 48.5%;
+}
+
+#section1 {
+  background-color: var(--neutral-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 4rem 2rem;
+}
+
+#section1 div {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  width: 45%;
+}
+
+#section1 div h1 {
+  color: var(--primary-color);
+  font-family: "Farro", sans-serif;
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+#section1 div #pretty {
+  color: var(--primary-color);
+  font-family: "Bona Nova", serif;
+  font-weight: 400;
+  font-size: 5rem;
+  font-style: italic;
+}
+
+#section1 div p {
+  color: var(--primary-color);
+  font-family: "League Spartan";
+  font-size: 1.25rem;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+#section1 div p strong {
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+#section1-second img {
+  height: auto;
+  border-radius: 32px;
+  width: 48.5%;
+}
+
+#section1-second {
+  background-color: var(--neutral-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 4rem 2rem;
+}
+
+#section1-second div {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  width: 45%;
+}
+
+#section1-second div h1 {
+  color: var(--primary-color);
+  font-family: "Farro", sans-serif;
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+#section1-second div #pretty {
+  color: var(--primary-color);
+  font-family: "Bona Nova", serif;
+  font-weight: 400;
+  font-size: 5rem;
+  font-style: italic;
+}
+
+#section1-second div p {
+  color: var(--primary-color);
+  font-family: "League Spartan";
+  font-size: 1.25rem;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+#section1-second div p strong {
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+#section2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1rem 2rem;
+}
+
+#section2 div {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  width: 30%;
+  border: 40%;
+  margin: 2%;
+  border-radius: 50px;
+  box-shadow: 0 8px 20px rgba(96, 0, 0, 0.3);
+  transition: all 0.25s ease;
+}
+
+#section2 div:hover {
+  transform: translateY(-10px);
+}
+
+#section2 div:hover .plate {
+  transform: scale(1.08);
+}
+
+#section2 div p {
+  color: var(--primary-color);
+  opacity: 0.4;
+  font-family: "Farro", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1;
+  text-align: center;
+  margin-top: 50px;
+}
+
+#section2 div h1 {
+  color: var(--primary-color);
+  font-size: 1.7rem;
+  font-weight: 400;
+  line-height: 1;
+  text-align: center;
+  margin: 0% 10% 5% 10%;
+}
+
+.plate {
+  max-width: 70%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 150%;
+  transition: all 0.25s ease;
+}
+
+.title-gradient span {
+  margin-right: 5px;
+  text-align: left;
+}
+
+.strong {
+  opacity: 1;
+  font-weight: 700;
+}
+.mid {
+  opacity: 0.6;
+}
+.low {
+  opacity: 0.3;
+}
+
+#section3 {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  background-color: var(--primary-color);
+}
+
+.image-row {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  padding: 2%;
+}
+
+.image-row img {
+  max-width: 45%;
+  border-radius: 20px;
+  transition: all 0.25s ease;
+}
+
+.image-row img:hover {
+  transform: translateY(-20px);
+}
+
+.view {
+  margin: 0 auto;
+}
+.accordion-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 2rem 0 2rem 0;
+}
+
+.accordion {
+  width: 100%;
+  max-width: 80%;
+  margin-bottom: -50px;
+}
+
+.accordion-header {
+  background: var(--neutral-color);
+  color: var(--primary-color);
+  border: 2px solid;
+  border-radius: 50px;
+  border-color: transparent;
+  font-size: 1.5rem;
+  font-weight: bolder;
+  padding: 1rem 1rem;
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+  box-shadow: 0 0px 10px rgba(91, 1, 1, 0.3);
+  transition: 0.2s ease;
+}
+
+.accordion-header:hover {
+  border-color: var(--primary-color);
+}
+
+.accordion-content {
+  max-height: 0;
+  font-weight: 400px;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  background: var(--primary-color);
+  border-radius: 0 0 50px 50px;
+  padding: 0 1.5rem;
+}
+
+.accordion-content p {
+  margin: 1rem 0;
+  text-align: center;
+  color: var(--neutral-color);
+}
+
+.accordion-header.active {
+  background: var(--primary-color);
+  color: var(--neutral-color);
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
+  border-radius: 50px 50px 0px 0px;
+}
+
+/* footer */
+
+.site-footer {
+  background-color: var(--primary-color);
+  color: var(--neutral-color);
+  font-family: "League Spartan", sans-serif;
+  padding: 3rem 2rem 1rem 2rem;
+}
+
+.site-footer p {
+  color: var(--neutral-color);
+  font-family: "League Spartan", sans-serif;
+}
+
+.site-footer h3 {
+  padding: 0 0 4% 0;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  justify-content: center;
+}
+
+.footer-about img {
+  width: 6rem;
+  margin-bottom: 1rem;
+}
+
+.footer-about p {
+  color: var(--neutral-color);
+  text-align: left;
+  padding: 0 0 0 32%;
+  opacity: 0.6;
+  font-size: 80%;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: var(--neutral-color);
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #ffd3c3;
+}
+
+.footer-social .social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  justify-content: center;
+}
+
+.footer-social .social-icons img {
+  width: 2rem;
+  height: 2rem;
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}

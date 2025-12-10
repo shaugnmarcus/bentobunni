@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>bentobunni - home</title>
+    <link rel="stylesheet" href="/style/styleabout.css" />
+    <link rel="stylesheet" href="/style/stylehome.css" />
+    <link rel="stylesheet" href="/style/responsive.css" />
+    <link rel="stylesheet" href="/style/cart.css" />
+    <link rel="stylesheet" href="/style/profile.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bona+Nova:ital,wght@0,400;0,700;1,400&family=Farro:wght@300;400;500;700&family=League+Spartan:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="cart-overlay"></div>
+    <div id="cart-panel">
+      <div id="cart-header">
+        <div id="cart-title">
+          <h2 class="strong">cart</h2>
+          <h2 class="mid">cart</h2>
+          <h2 class="low">cart</h2>
+        </div>
+        <button id="close-cart" class="close-cart">&times;</button>
+      </div>
+
+      <div id="cart-items"></div>
+
+      <div id="cart-total">
+        <h3>total:</h3>
+        <span id="total-amount">₱ 0.00</span>
+      </div>
+
+      <button id="checkout-button">proceed to checkout</button>
+    </div>
+
+    <div id="profile-overlay"></div>
+    <div id="profile-panel">
+      <div id="profile-header">
+        <div id="profile-title">
+          <h2 class="strong">profile</h2>
+          <h2 class="mid">profile</h2>
+          <h2 class="low">profile</h2>
+        </div>
+        <button id="close-profile" class="close-profile">&times;</button>
+      </div>
+
+      <div id="profile-content">
+        <h1 id="profile-main-text">loading...</h1>
+        <p id="profile-sub-text">please wait</p>
+      </div>
+
+      <div id="profile-user-bar">
+        <h3>user:</h3>
+        <span id="sidebar-username">Guest</span>
+      </div>
+
+      <button id="sidebar-auth-button">login</button>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav>
+      <img src="../img/logo.png" />
+
+      <div class="nav-links" id="nav-links">
+        <a href="./index.html" id="home">home</a>
+        <a href="./menu.html" id="menu">menu</a>
+        <a href="./feed.html" id="feed">feed</a>
+        <a href="./about.html" id="about">about</a>
+        <a class="cart-icon-container" id="cart-icon">
+          <img class="nav-icon" src="../img/cart.svg" alt="Cart" />
+          <span id="cart-count" class="cart-badge" style="display: none"
+            >0</span
+          >
+        </a>
+
+        <div id="dropdown">
+          <a><img class="nav-icon" src="../img/profile.png" id="profile" /></a>
+
+          <div id="dropdown-content">
+            <p id="profile-username">name</p>
+            <button id="auth-button">button</button>
+          </div>
+        </div>
+      </div>
+      <button class="burger" id="burger">
+        &#9776;
+        <!-- Hamburger icon -->
+      </button>
+    </nav>
+
+    <div class="segment">
+      <div class="left fade-in">
+        <h2 style="font-size: 4rem; color: #ffefd2">
+          soft, fluffy <br />
+          bite-sized goodies
+        </h2>
+        <div id="buttons" class="button-group">
+          <button class="btn-primary-solid" onclick="location.href='menu.html'">
+            order now
+          </button>
+
+          <button onclick="location.href='#readmore'" class="btn-primary">
+            see FAQs
+          </button>
+        </div>
+      </div>
+
+      <div class="right">
+        <img src="./img/hero.png" alt="browniehand" class="slide-left" />
+      </div>
+    </div>
+
+    <section id="section1">
+      <img src="./img/section1.png" />
+
+      <div>
+        <h1>
+          the 'p' in pastry <br />
+          stands for <a id="pretty">pretty</a>
+        </h1>
+        <p>
+          <strong>bentobunni</strong> believe that sweetness starts with sight,
+          so each creation is designed with clean lines, soft colors, and that
+          effortless charm that makes you want to hit “add to cart” instantly.
+        </p>
+      </div>
+    </section>
+
+    <h1 class="title-gradient" style="margin-left: 5%; font-size: 3rem">
+      <span class="strong">selection</span>
+      <span class="mid">selection</span>
+      <span class="low">selection</span>
+    </h1>
+
+    <section id="section2">
+      <div>
+        <p>starts at ₱290</p>
+        <img src="./img/bbreadplate.png" class="plate" />
+        <button
+          class="btn-secondary"
+          style="margin: auto"
+          onclick="location.href='menu.html'"
+        >
+          see more
+        </button>
+
+        <h1>
+          our <strong>banana bread</strong> is a moist, aromatic loaf made with
+          ripe bananas and a tender crumb.
+        </h1>
+      </div>
+
+      <div>
+        <p>starts at ₱180</p>
+        <img src="./img/brownieplate.png" class="plate" />
+        <button
+          class="btn-secondary"
+          style="margin: auto"
+          onclick="location.href='menu.html'"
+        >
+          see more
+        </button>
+
+        <h1>
+          our <strong> brownies </strong> are rich, <br />
+          fudgy squares with a dense center and crisp edges.
+        </h1>
+      </div>
+
+      <div>
+        <p>starts at ₱185</p>
+        <img src="./img/crinkleplate.png" class="plate" />
+        <button
+          class="btn-secondary"
+          style="margin: auto"
+          onclick="location.href='menu.html'"
+        >
+          see more
+        </button>
+
+        <h1>
+          our <strong>crinkles</strong> are chewy chocolate cookies coated in
+          powdered sugar with a crackled top.
+        </h1>
+      </div>
+    </section>
+
+    <section id="section3">
+      <div>
+        <h1
+          class="title-gradient"
+          style="font-size: 3rem; color: var(--neutral-color)"
+        >
+          <span class="strong">updates</span>
+          <span class="mid">updates</span>
+          <span class="low">updates</span>
+        </h1>
+      </div>
+
+      <div class="image-row">
+        <img src="./img/feed1.png" />
+        <img src="./img/feed2.png" />
+      </div>
+
+      <button
+        class="btn-primary view"
+        style="align-items: center"
+        onclick="location.href='./feed.html'"
+      >
+        view feed
+      </button>
+    </section>
+
+    <section id="section1-second">
+      <div>
+        <h1>a bakery with <a id="pretty">purpose</a></h1>
+
+        <p>
+          this bakery began with a simple goal: to craft delicious &
+          aesthetically pleasing baked goods that look the part from the inside
+          out. run by a detail-driven student, it delivers treats that taste
+          exceptional and come in thoughtfully designed packaging to elevate the
+          whole experience.
+        </p>
+
+        <button
+          id="readmore"
+          class="btn-secondary"
+          onclick="location.href='./about.html'"
+        >
+          read more
+        </button>
+      </div>
+      <img src="./img/packs.png" />
+    </section>
+
+    <h1
+      id="support"
+      class="title-gradient"
+      style="margin-left: 5%; font-size: 3rem"
+    >
+      <span class="strong">support</span>
+      <span class="mid">support</span>
+      <span class="low">support</span>
+    </h1>
+
+    <h1 style="opacity: 0.6; margin: 1% 0% 0% 5%; font-size: 1.2rem">
+      frequently asked questions
+    </h1>
+
+    <!--faqs-->
+    <div class="accordion-container">
+      <div class="accordion">
+        <button class="accordion-header" title="Click to Expand">
+          where are you located?
+        </button>
+        <div class="accordion-content">
+          <p>
+            we're based in quezon city, but we can deliver within metro manila.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-container">
+      <div class="accordion">
+        <button class="accordion-header" title="Click to Expand">
+          do you offer pick-up and delivery?
+        </button>
+        <div class="accordion-content">
+          <p>
+            yes! <br />
+            delivery: available across metro manila<br />
+            pick-up: available only if you're nearby<br />
+            quezon city or within the u-belt area.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-container">
+      <div class="accordion">
+        <button class="accordion-header" title="Click to Expand">
+          how do i know if my preferred date is available?
+        </button>
+        <div class="accordion-content">
+          <p>
+            we only accept a maximum of 3 orders per day. <br />
+            make sure to book ahead and check our <br />
+            availabiliy first before placing an order.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-container">
+      <div class="accordion">
+        <button class="accordion-header" title="Click to Expand">
+          do you accept rush orders?
+        </button>
+        <div class="accordion-content">
+          <p>
+            no, we do not accept rush orders. <br />
+            please place your order at least 3-5 days <br />
+            before your desired delivery or pick-up date.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-container">
+      <div class="accordion">
+        <button class="accordion-header" title="Click to Expand">
+          what are your payment options?
+        </button>
+        <div class="accordion-content">
+          <p>
+            for deliveries: gcash only <br />
+            for pick-ups: cash or gcash
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-container">
+      <div class="accordion">
+        <button class="accordion-header" title="Click to Expand">
+          how are your prices determined?
+        </button>
+        <div class="accordion-content">
+          <p>
+            our prices are based on ingredient costs + fair <br />
+            profit margin, ensuring quality while remaining <br />
+            affordable for our customers.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-container" title="Click to Expand">
+      <div class="accordion">
+        <button class="accordion-header">any last reminders?</button>
+        <div class="accordion-content">
+          <p>enjoy every bite when bentobunni arrives at your doorstep!</p>
+        </div>
+      </div>
+    </div>
+
+    <section
+      style="height: 20rem; background-color: var(--neutral-color)"
+    ></section>
+
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <img src="./img/logo.png" alt="Bento Bunni Logo" />
+          <p>life’s sweetest moments come in the cutest packages!</p>
+        </div>
+
+        <div class="footer-links">
+          <h3>Navigation</h3>
+          <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./menu.html">Menu</a></li>
+            <li><a href="./feed.html">Feed</a></li>
+            <li><a href="./about.html">About</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <h3>Contact</h3>
+          <p>Email: info@bentobunni.com</p>
+          <p>Phone: +63 912 345 6789</p>
+        </div>
+
+        <div class="footer-social">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/profile.php?id=61577699221929"
+              ><img src="./img/facebook.png" alt="Facebook"
+            /></a>
+            <a href="https://www.instagram.com/bentobunniph/"
+              ><img src="./img/instagram.png" alt="Instagram"
+            /></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 Bento Bunni. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <script src="/script/script.js"></script>
+    <script>
+      const burger = document.getElementById("burger");
+      const navLinks = document.getElementById("nav-links");
+
+      burger.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
+    </script>
+  </body>
+</html>

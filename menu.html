@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>bentobunni - menu</title>
+      
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="/style/stylemenu.css">
+        <link rel="stylesheet" href="/style/cart.css">
+        <link rel="stylesheet" href="/style/responsive.css">
+        <link rel="stylesheet" href="/style/profile.css">
+      
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link 
+          href="https://fonts.googleapis.com/css2?family=Bona+Nova:ital,wght@0,400;0,700;1,400&family=Farro:wght@300;400;500;700&family=League+Spartan:wght@100..900&display=swap" 
+          rel="stylesheet"
+        >
+      </head>      
+  <body>
+    <div id="toast-notification">added to cart!</div>
+    <div id="cart-overlay"></div>
+    <div id="cart-panel">
+      <div id="cart-header">
+        <div id="cart-title">
+          <h2 class="strong">cart</h2>
+          <h2 class="mid">cart</h2>
+          <h2 class="low">cart</h2>
+        </div>
+        <button id="close-cart" class="close-cart">&times;</button>
+      </div>
+    
+      <div id="cart-items"></div>
+    
+      <div id="cart-total">
+        <h3>total:</h3>
+        <span id="total-amount">₱ 0.00</span>
+      </div>
+    
+      <button id="checkout-button">proceed to checkout</button>
+    </div>
+    
+    <div id="profile-overlay"></div>
+    <div id="profile-panel">
+      <div id="profile-header">
+        <div id="profile-title">
+          <h2 class="strong">profile</h2>
+          <h2 class="mid">profile</h2>
+          <h2 class="low">profile</h2>
+        </div>
+        <button id="close-profile" class="close-profile">&times;</button>
+      </div>
+    
+      <div id="profile-content">
+        <h1 id="profile-main-text">loading...</h1>
+        <p id="profile-sub-text">please wait</p>
+      </div>
+    
+      <div id="profile-user-bar">
+        <h3>user:</h3>
+        <span id="sidebar-username">Guest</span>
+      </div>
+    
+      <button id="sidebar-auth-button">login</button>
+    </div>
+     <!-- Navigation Bar -->
+     <nav>
+        <img src="../img/logo.png">
+
+        <div class="nav-links" id="nav-links">
+            <a href="./index.html" id="home">home</a>
+            <a href="./menu.html" id="menu">menu</a>
+            <a href="./feed.html" id="feed">feed</a>
+            <a href="./about.html" id="about">about</a>
+            <a class="cart-icon-container" id="cart-icon">
+                <img class="nav-icon" src="../img/cart.svg" alt="Cart" />
+                <span id="cart-count" class="cart-badge" style="display: none"
+                  >0</span
+                >
+              </a>
+
+            <div id="dropdown">
+                <a><img class="nav-icon" src="../img/profile.png" id="profile" /></a>
+
+                <div id="dropdown-content">
+                    <p id="profile-username">name</p>
+                    <button id="auth-button">button</button>
+                </div>
+            </div>
+        </div>
+                <button class="burger" id="burger">
+        &#9776; <!-- Hamburger icon -->
+      </button>
+      </nav>
+
+    <main class="fade-up">
+        <div id = "menu-title" class="menu-title">
+            <h1>menu</h1>
+            <p>discover our menu of banana bread, rich brownies, and soft crinkles, each crafted to delight in both taste and presentation.</p>
+        </div>
+        
+        <div id="search-and-filters">
+            <!-- Radio Buttons for Filtering -->
+            <div id="filter-options">
+                <input type="radio" id="all" name="filter" value="all" checked>
+                <label for="all">all</label>
+
+                <input type="radio" id="banana-bread" name="filter" value="banana-bread">
+                <label for="banana-bread">banana bread</label>
+
+                <input type="radio" id="brownies" name="filter" value="brownies">
+                <label for="brownies">brownies</label>
+
+                <input type="radio" id="crinkles" name="filter" value="crinkles">
+                <label for="crinkles">crinkles</label>
+            </div>
+        </div>
+    </main>
+
+    <div class="fade-up" id="products">
+        <!-- Banana Bread -->
+        <section class="product" id="banana-bread-section">
+            <img src="./img/banana-bread.png">
+    
+            <div class="content">
+                <h1>signature banana bread</h1>
+                <p>moist, aromatic loaf made with ripe bananas and a tender crumb.</p>
+                
+                <h2 class="subtitle">mini banana bread</h2>
+                <div class="options">
+                    <div class="temp" id="mini-1pc">
+                        <h2>1 pc.</h2>
+                        <div class="price">
+                            <h2>₱35</h2>
+                            <img src="./img/addcart.png"
+                            data-product-id="product1" 
+                            data-variants="1pc"
+                            class="cart-icon add-to-cart" 
+                            title="Add to Cart" 
+                            alt="Add to Cart">
+                        </div>
+                    </div>
+
+                    <div class="temp" id="mini-3pcs">
+                        <h2>3 pcs.</h2>
+
+                        <div class="price">
+                            <h2>₱100</h2>
+                            <img src="./img/addcart.png" 
+                            data-product-id="product1" 
+                            data-variants="3pcs"
+                            class="cart-icon add-to-cart" 
+                            title="Add to Cart" 
+                            alt="Add to Cart">
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="subtitle">regular banana bread</h2>
+                <div class="options">
+                    <div class="temp" id="plain">
+                        <h2>plain</h2>
+    
+                        <div class="price">
+                            <h2>₱290</h2>
+                            <img src="./img/addcart.png" 
+                            data-product-id="product2"
+                            data-variants="plain"
+                            class="cart-icon add-to-cart" 
+                            title="Add to Cart" 
+                            alt="Add to Cart">
+                        </div>
+                    </div>
+                    
+                    <div class="temp" id="walnut">
+                        <h2>with walnuts</h2>
+                        <div class="price">
+                            <h2>₱310</h2>
+                            <img src="./img/addcart.png" 
+                            data-product-id="product2"
+                            data-variants="with-walnuts"
+                            class="cart-icon add-to-cart" 
+                            title="Add to Cart" 
+                            alt="Add to Cart">
+                        </div>
+                    </div>
+                    
+                    <div class="temp" id="chocolate-chips">
+                        <h2>with chocolate chips</h2>
+    
+                        <div class="price">
+                            <h2>₱320</h2>
+                            <img src="./img/addcart.png"
+                            data-product-id="product2"
+                            data-variants="with-chocolate-chips"
+                            class="cart-icon add-to-cart" 
+                            title="Add to Cart" 
+                            alt="Add to Cart">
+                        </div>
+                    </div>
+    
+                    <div class="temp" id="mixin">
+                        <h2>with chocolate chips and walnuts</h2>
+    
+                        <div class="price">
+                            <h2>₱350</h2>
+                            <img src="./img/addcart.png" 
+                            data-product-id="product2"
+                            data-variants="with-chocolate-chips-and-walnuts"
+                            class="cart-icon add-to-cart" 
+                            title="Add to Cart" 
+                            alt="Add to Cart">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Brownies -->
+        <section class="product" id="brownies-section">
+            <img src="./img/brownies.png">
+    
+            <div class="content">
+                <h1>brownies</h1>
+                <p>rich, fudgy squares with a dense center and crisp edges.</p>
+    
+                <h2 class="subtitle">chocolate fudge</h2>
+                <div class="options" id="brownies-group">
+                    <div class="temp">
+                        <div class="item-info">
+                            <h2>box of 6</h2>
+                        <h2 class="price-tag">₱200</h2>
+                    </div>
+                    <img src="./img/addcart.png" 
+                    data-product-id="product3"
+                    data-variants="box-of-6"
+                    class="cart-icon add-to-cart" 
+                    title="Add to Cart" 
+                    alt="Add to Cart">
+                </div>                    
+                
+                <div class="temp">
+                        <div class="item-info">
+                            <h2>box of 12</h2>
+                            <h2 class="price-tag">₱380</h2>
+                        </div>
+                        <img src="./img/addcart.png" 
+                        data-product-id="product3"
+                        data-variants="box-of-12"
+                        class="cart-icon add-to-cart" 
+                        title="Add to Cart" 
+                        alt="Add to Cart">
+                    </div>
+                </div>
+    
+                <h2 class="subtitle">red velvet cheesecake</h2>
+                <div class="options">
+                    <div class="temp">
+                        <div class="item-info">
+                            <h2>box of 6</h2>
+                        <h2 class="price-tag">₱250</h2>
+                    </div>
+                    <img src="./img/addcart.png" 
+                    data-product-id="product4"
+                    data-variants="box-of-6"
+                    class="cart-icon add-to-cart" 
+                    title="Add to Cart" 
+                    alt="Add to Cart">
+                </div>      
+
+                <div class="temp">
+                        <div class="item-info">
+                            <h2>box of 12</h2>
+                            <h2 class="price-tag">₱390</h2>
+                        </div>
+                        <img src="./img/addcart.png" 
+                        data-product-id="product4"
+                        data-variants="box-of-12"
+                        class="cart-icon add-to-cart" 
+                        title="Add to Cart" 
+                        alt="Add to Cart">
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Crinkles -->
+        <section class="product" id="crinkles-section">
+            <img src="./img/crinkles.png">
+    
+            <div class="content">
+                <h1>crinkles</h1>
+                <p>chewy cookies coated in powdered sugar with a crackled top.</p>
+    
+                <h2 class="subtitle">chocolate</h2>
+                <div class="options">
+                    <div class="temp">
+                        <h2>box of 6</h2>
+                        <div class="price">
+                            <h2>₱185</h2>
+                            <img src="./img/addcart.png" 
+                            data-product-id="product5"
+                            data-variants="box-of-6"
+                            class="cart-icon add-to-cart"
+                            title="Add to Cart"
+                            alt="Add to Cart">
+                        </div>
+                    </div>
+    
+                    <div class="temp">
+                        <h2>box of 10</h2>
+                        <div class="price">
+                            <h2>₱320</h2>
+                            <img src="./img/addcart.png" 
+                            data-product-id="product5"
+                            data-variants="box-of-10"
+                            class="cart-icon add-to-cart" 
+                            title="Add to Cart" 
+                            alt="Add to Cart">
+                        </div>
+                    </div>
+    
+    
+                </div>
+                <h2 class="subtitle">red velvet w/ cream cheese</h2>
+                <div class="options">
+                    <div class="temp">
+                        <h2>2 pcs.</h2>
+                        <div class="price">
+                            <h2>₱99</h2>
+                            <img src="./img/addcart.png"
+                            data-product-id="product6"
+                            data-variants="2pcs"
+                            class="cart-icon add-to-cart" 
+                            title="Add to Cart" 
+                            alt="Add to Cart">
+                        </div>
+                    </div>
+    
+                    <div class="temp">
+                        <h2>6 pcs.</h2>
+                        <div class="price">
+                            <h2>₱240</h2>
+                            <img src="./img/addcart.png"
+                            data-product-id="product6"
+                            data-variants="6pcs"
+                            class="cart-icon add-to-cart" 
+                            title="Add to Cart" 
+                            alt="Add to Cart">
+                        </div>
+                    </div>
+    
+                    <div class="temp">
+                        <h2>12 pcs.</h2>
+                        <div class="price">
+                            <h2>₱430</h2>
+                            <img src="./img/addcart.png" 
+                            data-product-id="product6"
+                            data-variants="12pcs"
+                            class="cart-icon add-to-cart" 
+                            title="Add to Cart" 
+                            alt="Add to Cart">
+                        </div>
+                    </div>
+            </div>
+        </section> 
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <script src="/script/script.js"></script>
+    <script> const burger = document.getElementById("burger");
+        const navLinks = document.getElementById("nav-links");
+        
+        burger.addEventListener("click", () => {
+          navLinks.classList.toggle("active");
+        });
+        </script>
+</body>
+</html>

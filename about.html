@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>bentobunni - about</title>
+    <link rel="stylesheet" href="/style/styleabout.css" />
+    <link rel="stylesheet" href="/style/responsive.css" />
+    <link rel="stylesheet" href="/style/cart.css" />
+    <link rel="stylesheet" href="/style/profile.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bona+Nova:ital,wght@0,400;0,700;1,400&family=Farro:wght@300;400;500;700&family=League+Spartan:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="cart-overlay"></div>
+    <div id="cart-panel">
+      <div id="cart-header">
+        <div id="cart-title">
+          <h2 class="strong">cart</h2>
+          <h2 class="mid">cart</h2>
+          <h2 class="low">cart</h2>
+        </div>
+        <button id="close-cart" class="close-cart">&times;</button>
+      </div>
+
+      <div id="cart-items"></div>
+
+      <div id="cart-total">
+        <h3>total:</h3>
+        <span id="total-amount">₱ 0.00</span>
+      </div>
+
+      <button id="checkout-button">proceed to checkout</button>
+    </div>
+
+    <div id="profile-overlay"></div>
+    <div id="profile-panel">
+      <div id="profile-header">
+        <div id="profile-title">
+          <h2 class="strong">profile</h2>
+          <h2 class="mid">profile</h2>
+          <h2 class="low">profile</h2>
+        </div>
+        <button id="close-profile" class="close-profile">&times;</button>
+      </div>
+
+      <div id="profile-content">
+        <h1 id="profile-main-text">loading...</h1>
+        <p id="profile-sub-text">please wait</p>
+      </div>
+
+      <div id="profile-user-bar">
+        <h3>user:</h3>
+        <span id="sidebar-username">Guest</span>
+      </div>
+
+      <button id="sidebar-auth-button">login</button>
+    </div>
+    <nav>
+      <img src="../img/logo.png" />
+      <div class="nav-links" id="nav-links">
+        <a href="./index.html" id="home">home</a>
+        <a href="./menu.html" id="menu">menu</a>
+        <a href="./feed.html" id="feed">feed</a>
+        <a href="./about.html" id="about">about</a>
+        <a class="cart-icon-container" id="cart-icon">
+          <img class="nav-icon" src="../img/cart.svg" alt="Cart" />
+          <span id="cart-count" class="cart-badge" style="display: none"
+            >0</span
+          >
+        </a>
+        <div id="dropdown">
+          <a><img class="nav-icon" src="../img/profile.png" id="profile" /></a>
+
+          <div id="dropdown-content">
+            <p id="profile-username">name</p>
+            <button id="auth-button">button</button>
+          </div>
+        </div>
+      </div>
+      <button class="burger" id="burger">
+        &#9776;
+        <!-- Hamburger icon -->
+      </button>
+    </nav>
+
+    <section class="fade-up" id="about1">
+      <img id="bentobunni" src="./img/bentoabout.png" />
+
+      <div id="contactme">
+        <h1>contact me</h1>
+        <div id="contactinfo">
+          <div>
+            <img src="./img/redphone.png" alt="Phone" />
+            <p>+63 927 461 2011</p>
+          </div>
+          <div>
+            <img src="./img/redmail.png" alt="Email" />
+            <p>bentobunni@gmail.com</p>
+          </div>
+          <div>
+            <img src="./img/redig.png" alt="Instagram" />
+            <p>bentobunniph</p>
+          </div>
+          <div>
+            <img src="./img/redfb.png" alt="Facebook" />
+            <p>bentobunni</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="fade-up" id="poster">
+      <img src="./img/poster.png" alt="About Poster" />
+    </section>
+
+    <!-- footer -->
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <img src="./img/logo.png" alt="Bento Bunni Logo" />
+          <p>life’s sweetest moments come in the cutest packages!</p>
+        </div>
+
+        <div class="footer-links">
+          <h3>Navigation</h3>
+          <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./menu.html">Menu</a></li>
+            <li><a href="./feed.html">Feed</a></li>
+            <li><a href="./about.html">About</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <h3>Contact</h3>
+          <p>Email: info@bentobunni.com</p>
+          <p>Phone: +63 912 345 6789</p>
+        </div>
+
+        <div class="footer-social">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/profile.php?id=61577699221929"
+              ><img src="./img/facebook.png" alt="Facebook"
+            /></a>
+            <a href="https://www.instagram.com/bentobunniph/"
+              ><img src="./img/instagram.png" alt="Instagram"
+            /></a>
+          </div>
+        </div>
+      </div>
+
+      <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+      <script src="/script/script.js"></script>
+      <script>
+        const burger = document.getElementById("burger");
+        const navLinks = document.getElementById("nav-links");
+
+        burger.addEventListener("click", () => {
+          navLinks.classList.toggle("active");
+        });
+      </script>
+    </footer>
+  </body>
+</html>

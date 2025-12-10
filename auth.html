@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style/styleauth.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bona+Nova:ital,wght@0,400;0,700;1,400&family=Farro:wght@300;400;500;700&family=League+Spartan:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>bentobunni - login</title>
+  </head>
+  <body>
+    <div class="auth-container">
+      <div class="left-section">
+        <div class="logo-container">
+          <img src="img/creamlogotagline.png" alt="BentoBunni Logo" />
+        </div>
+        <img src="img/browniefloat.png" alt="Brownie Stack" class="brownie-1" />
+        <img src="img/browniefloat.png" alt="Brownie Stack" class="brownie-2" />
+      </div>
+
+      <div class="right-section">
+        <a href="#" class="back-button" onclick="history.back(); return false;"
+          >← back</a
+        >
+
+        <div id="login-contents" class="auth-contents active">
+          <div class="auth-header">
+            <h1>welcome back!</h1>
+            <p>login to bentobunni to start ordering</p>
+          </div>
+
+          <div class="mode-buttons">
+            <button class="active" id="login-mode-btn">login</button>
+            <button id="show-signup">sign up</button>
+          </div>
+
+          <form id="login" class="auth-form">
+            <label for="email-login">email</label>
+            <input
+              type="email"
+              id="email-login"
+              name="email"
+              placeholder="example@gmail.com"
+              required
+            />
+
+            <label for="password-login">password</label>
+            <input
+              type="password"
+              id="password-login"
+              name="password"
+              placeholder="••••••••••"
+              required
+            />
+
+            <button type="submit">login</button>
+          </form>
+        </div>
+
+        <div id="signup-contents" class="auth-contents">
+          <div class="auth-header">
+            <h1>welcome!</h1>
+            <p>join bentobunni to start ordering</p>
+          </div>
+
+          <div class="mode-buttons">
+            <button id="show-login">login</button>
+            <button class="active" id="signup-mode-btn">sign up</button>
+          </div>
+
+          <form id="sign-up" class="auth-form">
+            <label for="username-signup">username</label>
+            <input
+              type="text"
+              id="username-signup"
+              name="username"
+              placeholder="juandelacruz"
+              required
+            />
+
+            <label for="email-signup">email</label>
+            <input
+              type="email"
+              id="email-signup"
+              name="email"
+              placeholder="example@gmail.com"
+              required
+            />
+
+            <label for="password-signup">password</label>
+            <input
+              type="password"
+              id="password-signup"
+              name="password"
+              placeholder="••••••••••"
+              required
+            />
+
+            <label for="confirm-password">confirm password</label>
+            <input
+              type="password"
+              id="confirm-password"
+              name="confirm-password"
+              placeholder="••••••••••"
+              required
+            />
+
+            <button type="submit">create account</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <script src="/script/auth.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const loginContents = document.getElementById("login-contents");
+        const signupContents = document.getElementById("signup-contents");
+        const showSignupBtn = document.getElementById("show-signup");
+        const showLoginBtn = document.getElementById("show-login");
+
+        showSignupBtn.addEventListener("click", function () {
+          loginContents.classList.remove("active");
+          signupContents.classList.add("active");
+        });
+
+        showLoginBtn.addEventListener("click", function () {
+          signupContents.classList.remove("active");
+          loginContents.classList.add("active");
+        });
+      });
+    </script>
+  </body>
+</html>
